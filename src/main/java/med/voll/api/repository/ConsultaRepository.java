@@ -9,5 +9,8 @@ import med.voll.api.model.Consulta;
 public interface ConsultaRepository extends JpaRepository<Consulta, Long> {
 
     boolean existsByMedicoIdAndData(Long idMedico, LocalDateTime data);
+
+    boolean existsByPacienteIdAndDataBetween(Long idPaciente, LocalDateTime primeiroHorario,
+            LocalDateTime ultimoHorario);
     
 }
